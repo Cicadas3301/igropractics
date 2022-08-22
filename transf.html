@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:regular,600,700&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="libs/fancybox/dist/jquery.fancybox.min.css">
+	<link rel="stylesheet" href="libs/select2/select2.min.css">
+	<link rel="stylesheet" href="css/datepicker.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/inner.css">
+
+	<title>Игры</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="container">
+				<div class="header_menu">
+					<a href="index.html" class="header_logo"><img src="images/logo.svg" alt="логотип"></a>
+					<div class="header_location">Ваш город: <a href="#changecity" data-fancybox="">Санкт-Петербург</a></div>
+					<div class="header_socials">
+						<ul>
+							<li>
+								<a href="index.html">
+									<svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<circle cx="17.5" cy="17.5" r="17.5" fill="white"/>
+										<path d="M20.4221 17.1956L16.3279 15.2851C15.9706 15.1193 15.6771 15.3052 15.6771 15.7008V19.2992C15.6771 19.6948 15.9706 19.8807 16.3279 19.7149L20.4203 17.8044C20.7794 17.6367 20.7794 17.3633 20.4221 17.1956ZM17.5 0C7.83489 0 0 7.83489 0 17.5C0 27.1651 7.83489 35 17.5 35C27.1651 35 35 27.1651 35 17.5C35 7.83489 27.1651 0 17.5 0ZM17.5 24.6093C8.54217 24.6093 8.38544 23.8018 8.38544 17.5C8.38544 11.1982 8.54217 10.3906 17.5 10.3906C26.4578 10.3906 26.6146 11.1982 26.6146 17.5C26.6146 23.8018 26.4578 24.6093 17.5 24.6093Z" fill="#656F83"/>
+										</svg>
+								</a>
+							</li>
+							<li>
+								<a href="index.html">
+									<svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<circle cx="17.5" cy="17.5" r="17.5" fill="white"/>
+										<path d="M17.5 0C7.83481 0 0 7.83481 0 17.5C0 27.1652 7.83481 35 17.5 35C27.1652 35 35 27.1652 35 17.5C35 7.83481 27.1652 0 17.5 0ZM26.9051 24.141C26.1583 24.608 23.1234 24.7472 22.3887 24.2134C21.9857 23.9207 21.6172 23.5545 21.2673 23.2057C21.0224 22.9619 20.7445 22.8436 20.5341 22.579C20.3623 22.3625 20.2444 22.107 20.0636 21.8932C19.7584 21.5346 19.2887 21.2294 18.9171 21.6676C18.3576 22.3269 19.0051 23.6216 18.259 24.1141C18.0088 24.2794 17.7563 24.3271 17.4435 24.3036L16.7509 24.3351C16.3441 24.343 15.6996 24.3468 15.2367 24.2634C14.7203 24.1702 14.2938 23.8881 13.8267 23.6811C12.9404 23.288 12.0961 22.7523 11.4535 22.0103C9.70461 19.9897 7.35561 17.2107 6.44308 14.6703C6.25541 14.1482 5.75953 13.1144 6.22964 12.6666C6.86882 12.2022 10.006 12.0714 10.4955 12.7895C10.6941 13.0814 10.8196 13.5083 10.9602 13.8393C11.1354 14.2517 11.2302 14.6403 11.5039 15.0054C11.7462 15.3292 11.9247 15.6548 12.112 16.0097C12.3224 16.4081 12.5211 16.7903 12.777 17.1569C12.9506 17.4064 13.4097 17.9026 13.6997 17.9394C14.4079 18.03 14.364 16.3092 14.3113 15.8891C14.2608 15.4842 14.2479 15.0547 14.2612 14.6441C14.2726 14.2938 14.304 13.8002 14.0967 13.5144C13.7585 13.048 13.0052 13.3968 12.9464 12.7701C13.0708 12.5923 13.0446 12.4346 13.8753 12.1609C14.5296 11.9459 14.9523 11.9528 15.3838 11.9873C16.2633 12.0578 17.1959 11.8197 18.0452 12.1048C18.8565 12.3781 18.731 13.531 18.7037 14.2218C18.6669 15.1646 18.7063 16.0851 18.7037 17.0424C18.7026 17.478 18.6851 17.9022 19.2166 17.8666C19.7148 17.8336 19.7656 17.4143 20.0033 17.0686C20.3339 16.5863 20.6376 16.0973 20.9742 15.6169C21.428 14.9675 21.5653 14.2377 21.9925 13.5724C22.1453 13.3347 22.2769 12.8282 22.5123 12.6401C22.6905 12.4972 23.029 12.5719 23.2447 12.5719H23.7577C24.1501 12.5719 24.5504 12.5688 24.9538 12.5829C25.5346 12.603 26.1852 12.4695 26.761 12.551C29.2462 12.9017 23.6375 18.2143 23.9294 19.1628C24.1311 19.8179 25.4106 20.55 25.8724 21.0864C26.4854 21.8011 28.3727 23.2216 26.9051 24.141Z" fill="#656F83"/>
+										</svg>
+								</a>
+							</li>
+							<li>
+								<a href="index.html">
+									<svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M17.5 35C27.165 35 35 27.165 35 17.5C35 7.83502 27.165 0 17.5 0C7.83502 0 0 7.83502 0 17.5C0 27.165 7.83502 35 17.5 35Z" fill="#656F83"/>
+										<path d="M7.92124 17.3151C13.0228 15.0924 16.4247 13.627 18.1268 12.9191C22.9868 10.8976 23.9966 10.5465 24.6548 10.5348C24.7996 10.5324 25.1233 10.5682 25.333 10.7384C25.51 10.882 25.5587 11.0761 25.582 11.2123C25.6053 11.3485 25.6344 11.6588 25.6113 11.9012C25.3479 14.6684 24.2084 21.3835 23.6286 24.4828C23.3833 25.7942 22.9003 26.2339 22.4327 26.277C21.4164 26.3705 20.6447 25.6054 19.6604 24.9601C18.1202 23.9505 17.2501 23.322 15.755 22.3368C14.0272 21.1982 15.1473 20.5724 16.1319 19.5497C16.3896 19.282 20.8673 15.2093 20.9539 14.8398C20.9648 14.7936 20.9748 14.6213 20.8725 14.5304C20.7702 14.4394 20.6192 14.4705 20.5102 14.4953C20.3557 14.5303 17.8952 16.1567 13.1286 19.3742C12.4302 19.8538 11.7976 20.0875 11.2308 20.0753C10.6059 20.0618 9.40399 19.722 8.51047 19.4315C7.41453 19.0753 6.5435 18.8869 6.61935 18.2819C6.65886 17.9668 7.09282 17.6445 7.92124 17.3151Z" fill="white"/>
+										</svg>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="header_button">
+						<a href="index.html" class="button button_blue">Для игропрактиков</a>
+					</div>
+					<div class="header_button">
+						<a href="#login" class="button button_white" data-fancybox="">Вход / Регистрация</a>
+					</div>
+					<div class="header_burger">
+						<div class="top-line"></div>
+						<div class="middle-line"></div>
+						<div class="bottom-line"></div>
+					</div>
+				</div>
+				<div class="header_nav">
+					<nav>
+						<ul class="menu_list">
+							<li><a href="calendar.html">Календарь игр</a></li>
+							<li><a href="https://gameuniversity.ru/" target="_blank">Обучение</a></li>
+							<li><a href="https://mastertigr.ru/" target="_blank">Магазин</a></li>
+							<li><a href="games.html">Игропрактики</a></li>
+							<li><a href="transf.html">Игры</a></li>
+							<li><a href="info.html">О нас</a></li>
+						</ul>
+					</nav>
+					<div class="header_search">
+						<input id="email" type="text" placeholder="Введите фразу для поиска" class="input"/>
+						<div class="search_block">
+							<button class="btn_search">
+								<svg width="32" height="30" viewBox="0 0 32 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M17.8958 17L26.7183 26C26.9575 26.2506 26.9571 26.6571 26.7193 26.9061L26.6878 26.9391C26.4491 27.189 26.0624 27.1893 25.8224 26.9381L17 17.9381" stroke="#34373D" stroke-width="2.00015" stroke-linecap="round" stroke-linejoin="round"/>
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M11.0773 19.4596C15.8355 19.4596 19.6927 15.648 19.6927 10.9461C19.6927 6.24425 15.8355 2.43262 11.0773 2.43262C6.31915 2.43262 2.46191 6.24425 2.46191 10.9461C2.46191 15.648 6.31915 19.4596 11.0773 19.4596Z" stroke="#34373D" stroke-width="2.00015" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+							</button>
+						</div>
+				</div>
+				</div>
+				<div class="header_mob">
+					<a href="index.html" class="header_logo"><img src="images/logo.svg" alt="логотип"></a>
+				</div>
+			</div>
+		</header>
+		<main class="main">
+			<div class="container">
+				<ul class="breadcrumbs">
+					<li class="breadcrumbs_item">
+						<a href="index.html" class="breadcrumbs_link">
+							Главная
+						</a>
+					</li>
+					<div class="breadcrumbs_arrow">
+						/
+					</div>
+					<li class="breadcrumbs_item">
+						<a href="#" class="breadcrumbs_link active">
+							Трансформационные игры
+						</a>
+					</li>
+				</ul>
+			</div>
+			<section class="section games">
+				<div class="container">
+					<form action="" class="games_top games_top--transf">
+						<div class="games_top-title">
+							трансформационные игры
+						</div>
+						<div class="games_top-selects">
+							<div class="games_top-select">
+								<select name="" id="">
+									<option value="">
+										Сфера
+									</option>
+									<option value="">
+										Территория денег (10)
+									</option>
+									<option value="">
+										Око судьбы
+									</option>
+									<option value="">
+										Око судьбы
+									</option>
+									<option value="">
+										Территория денег (10)
+									</option>
+									<option value="">
+										Око судьбы
+									</option>
+									<option value="">
+										Око судьбы
+									</option>
+								</select>
+							</div>
+							<div class="games_top-select">
+								<select name="" id="">
+									<option value="">
+										Автор
+									</option>
+									<option value="">
+										Территория денег (10)
+									</option>
+									<option value="">
+										Око судьбы
+									</option>
+									<option value="">
+										Око судьбы
+									</option>
+									<option value="">
+										Территория денег (10)
+									</option>
+									<option value="">
+										Око судьбы
+									</option>
+									<option value="">
+										Око судьбы
+									</option>
+								</select>
+							</div>
+							<div class="games_top-select">
+								<select name="" id="">
+									<option value="">
+										Название
+									</option>
+									<option value="">
+										Территория денег (10)
+									</option>
+									<option value="">
+										Око судьбы
+									</option>
+									<option value="">
+										Око судьбы
+									</option>
+									<option value="">
+										Территория денег (10)
+									</option>
+									<option value="">
+										Око судьбы
+									</option>
+									<option value="">
+										Око судьбы
+									</option>
+								</select>
+							</div>
+							<div class="games_top-filter">
+								<span>Фильтры</span>
+								<svg width="23" height="15" viewBox="0 0 23 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M14.2066 0.246402C13.5732 0.38566 13.0522 0.677652 12.5625 1.17179C12.2481 1.48625 12.1357 1.63898 11.965 1.97589C11.8482 2.205 11.7359 2.48351 11.709 2.58683L11.6596 2.78449H6.1252H0.590825L0.393169 2.88332C0.119146 3.02257 -0.0201122 3.26964 0.00234879 3.56164C0.0248097 3.80421 0.123638 3.97043 0.348247 4.11867L0.496489 4.22199H6.07129H11.6461L11.7449 4.54992C12.0279 5.47531 12.8275 6.30187 13.7709 6.64777C14.6828 6.98019 15.6082 6.9173 16.4887 6.4591C17.2613 6.0548 17.9531 5.18332 18.1598 4.34328L18.1912 4.22199H20.3385H22.4813L22.6295 4.11867C22.8541 3.97043 22.9529 3.80421 22.9754 3.56164C22.9979 3.26964 22.8586 3.02257 22.5846 2.88332C22.3869 2.78449 22.3734 2.78449 20.2846 2.78449H18.1867L18.1373 2.59132C18.0475 2.25441 17.7465 1.69289 17.4859 1.37843C16.8525 0.614761 15.8822 0.170035 14.8715 0.183511C14.6559 0.188004 14.3549 0.214957 14.2066 0.246402ZM15.4914 1.70187C16.1832 1.9175 16.6729 2.488 16.7986 3.22921C17.0098 4.45558 15.8912 5.59211 14.6649 5.39894C13.5328 5.22375 12.7916 4.10968 13.0836 3.03156C13.1779 2.68566 13.4295 2.27687 13.6721 2.07472C13.8697 1.90851 14.2516 1.71086 14.4672 1.66144C14.7412 1.59406 15.2039 1.61652 15.4914 1.70187Z" fill="#2256A6"/>
+									<path d="M7.24414 8.44517C6.09414 8.74614 5.21367 9.5772 4.85879 10.7002L4.78242 10.9563L2.6127 10.9698C0.501367 10.9832 0.442969 10.9877 0.32168 11.0776C0.0835937 11.2528 0.0117188 11.3965 0.0117188 11.6795C0.0117188 11.9625 0.0835937 12.1063 0.32168 12.2815C0.442969 12.3713 0.501367 12.3758 2.61719 12.3893L4.79141 12.4028L4.86328 12.6543C5.07891 13.3911 5.66289 14.1368 6.34121 14.55C6.48047 14.6309 6.76797 14.7612 6.98359 14.8375C7.32051 14.9543 7.46426 14.9768 7.93145 14.9948C8.61426 15.0217 8.95566 14.9498 9.55762 14.6534C10.3123 14.285 10.9816 13.5123 11.2287 12.7262L11.332 12.3983L16.9338 12.3893C22.5086 12.3758 22.5355 12.3758 22.6568 12.2815C22.8949 12.1063 22.9668 11.9625 22.9668 11.6795C22.9668 11.3965 22.8949 11.2528 22.6568 11.0776C22.5355 10.9832 22.5086 10.9832 16.9338 10.9698L11.332 10.9608L11.2287 10.6284C10.9816 9.84224 10.3033 9.0606 9.53965 8.69224C9.31504 8.58442 9.00059 8.46313 8.83887 8.4272C8.43008 8.32837 7.64395 8.33735 7.24414 8.44517ZM8.67266 9.87817C9.77773 10.26 10.2764 11.5223 9.7418 12.569C9.53516 12.9778 9.14883 13.3012 8.67266 13.4764C8.43906 13.5618 8.32676 13.5752 7.97637 13.5573C7.62598 13.5438 7.50918 13.5168 7.25312 13.4C6.29629 12.9508 5.88301 11.7918 6.34121 10.8485C6.56133 10.4083 6.88926 10.1073 7.38789 9.90063C7.7293 9.76138 8.2998 9.75239 8.67266 9.87817Z" fill="#2256A6"/>
+								</svg>								
+							</div>
+							<button type="reset" class="games_top-button">
+								Сбросить фильтр
+							</butto>
+						</div>
+						<div class="games_top-mob">
+							<div class="games_top-close">
+								<svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<line x1="8.1318" y1="25.1025" x2="25.1024" y2="8.13194" stroke="#34373D"/>
+									<line x1="25.1025" y1="25.8096" x2="8.13194" y2="8.83905" stroke="#34373D"/>
+								</svg>									
+							</div>
+							<button class="games_top-hide">
+								Показать
+							</button>
+						</div>
+					</form>
+					<div class="games_items">
+						<div class="games_item topleftimg">
+							<div class="games_item-after">
+								<img src="./images/purplecube.svg" alt="">
+							</div>
+							<div class="games_item-img">
+								<img src="./images/gamesitem.png" alt="">
+							</div>
+							<div class="games_item-wrapper">
+								<div class="games_item-name">
+									Время перемен
+								</div>
+								<div class="games_item-desc">
+									У тебя наверняка есть цели, сокровенные мечты и заветные желания. И я уверена, что ты прикладываешь усилия для их реализации: возможно, визуализируешь, манифестируешь, составляешь доску желаний, строишь планы, совершаешь определённые действия. 
+								</div>
+								<div class="games_item-bottom">
+									<div class="games_item-info">
+										<div class="games_item-infoblock">
+											<img src="./images/comment.svg" alt="">
+											<span>12</span>
+										</div>
+									</div>
+									<a href="game.html" class="games_item-button">
+										<span>Побробнее</span>
+										<svg width="22" height="11" viewBox="0 0 22 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M0 5.23529L19.5652 5.23529M14.7826 10L20 5.23529L14.7826 1" stroke="#F3BD55" stroke-width="2"/>
+										</svg>										
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="games_item">
+							<div class="games_item-img">
+								<img src="./images/gamesitem.png" alt="">
+							</div>
+							<div class="games_item-wrapper">
+								<div class="games_item-name">
+									Время перемен
+								</div>
+								<div class="games_item-desc">
+									У тебя наверняка есть цели, сокровенные мечты и заветные желания. И я уверена, что ты прикладываешь усилия для их реализации: возможно, визуализируешь, манифестируешь, составляешь доску желаний, строишь планы, совершаешь определённые действия. 
+								</div>
+								<div class="games_item-bottom">
+									<div class="games_item-info">
+										<div class="games_item-infoblock">
+											<img src="./images/comment.svg" alt="">
+											<span>12</span>
+										</div>
+									</div>
+									<a href="game.html" class="games_item-button">
+										<span>Побробнее</span>
+										<svg width="22" height="11" viewBox="0 0 22 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M0 5.23529L19.5652 5.23529M14.7826 10L20 5.23529L14.7826 1" stroke="#F3BD55" stroke-width="2"/>
+										</svg>										
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="games_item">
+							<div class="games_item-img">
+								<img src="./images/gamesitem.png" alt="">
+							</div>
+							<div class="games_item-wrapper">
+								<div class="games_item-name">
+									Время перемен
+								</div>
+								<div class="games_item-desc">
+									У тебя наверняка есть цели, сокровенные мечты и заветные желания. И я уверена, что ты прикладываешь усилия для их реализации: возможно, визуализируешь, манифестируешь, составляешь доску желаний, строишь планы, совершаешь определённые действия. 
+								</div>
+								<div class="games_item-bottom">
+									<div class="games_item-info">
+										<div class="games_item-infoblock">
+											<img src="./images/comment.svg" alt="">
+											<span>12</span>
+										</div>
+									</div>
+									<a href="game.html" class="games_item-button">
+										<span>Побробнее</span>
+										<svg width="22" height="11" viewBox="0 0 22 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M0 5.23529L19.5652 5.23529M14.7826 10L20 5.23529L14.7826 1" stroke="#F3BD55" stroke-width="2"/>
+										</svg>										
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="games_item">
+							<div class="games_item-img">
+								<img src="./images/gamesitem.png" alt="">
+							</div>
+							<div class="games_item-wrapper">
+								<div class="games_item-name">
+									Время перемен
+								</div>
+								<div class="games_item-desc">
+									У тебя наверняка есть цели, сокровенные мечты и заветные желания. И я уверена, что ты прикладываешь усилия для их реализации: возможно, визуализируешь, манифестируешь, составляешь доску желаний, строишь планы, совершаешь определённые действия. 
+								</div>
+								<div class="games_item-bottom">
+									<div class="games_item-info">
+										<div class="games_item-infoblock">
+											<img src="./images/comment.svg" alt="">
+											<span>12</span>
+										</div>
+									</div>
+									<a href="game.html" class="games_item-button">
+										<span>Побробнее</span>
+										<svg width="22" height="11" viewBox="0 0 22 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M0 5.23529L19.5652 5.23529M14.7826 10L20 5.23529L14.7826 1" stroke="#F3BD55" stroke-width="2"/>
+										</svg>										
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="games_item">
+							<div class="games_item-img">
+								<img src="./images/gamesitem.png" alt="">
+							</div>
+							<div class="games_item-wrapper">
+								<div class="games_item-name">
+									Время перемен
+								</div>
+								<div class="games_item-desc">
+									У тебя наверняка есть цели, сокровенные мечты и заветные желания. И я уверена, что ты прикладываешь усилия для их реализации: возможно, визуализируешь, манифестируешь, составляешь доску желаний, строишь планы, совершаешь определённые действия. 
+								</div>
+								<div class="games_item-bottom">
+									<div class="games_item-info">
+										<div class="games_item-infoblock">
+											<img src="./images/comment.svg" alt="">
+											<span>12</span>
+										</div>
+									</div>
+									<a href="game.html" class="games_item-button">
+										<span>Побробнее</span>
+										<svg width="22" height="11" viewBox="0 0 22 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M0 5.23529L19.5652 5.23529M14.7826 10L20 5.23529L14.7826 1" stroke="#F3BD55" stroke-width="2"/>
+										</svg>										
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="games_item toprightimg">
+							<div class="games_item-after">
+								<img src="./images/purpleline.svg" alt="">
+							</div>
+							<div class="games_item-img">
+								<img src="./images/gamesitem.png" alt="">
+							</div>
+							<div class="games_item-wrapper">
+								<div class="games_item-name">
+									Время перемен
+								</div>
+								<div class="games_item-desc">
+									У тебя наверняка есть цели, сокровенные мечты и заветные желания. И я уверена, что ты прикладываешь усилия для их реализации: возможно, визуализируешь, манифестируешь, составляешь доску желаний, строишь планы, совершаешь определённые действия. 
+								</div>
+								<div class="games_item-bottom">
+									<div class="games_item-info">
+										<div class="games_item-infoblock">
+											<img src="./images/comment.svg" alt="">
+											<span>12</span>
+										</div>
+									</div>
+									<a href="game.html" class="games_item-button">
+										<span>Побробнее</span>
+										<svg width="22" height="11" viewBox="0 0 22 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M0 5.23529L19.5652 5.23529M14.7826 10L20 5.23529L14.7826 1" stroke="#F3BD55" stroke-width="2"/>
+										</svg>										
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="games_bottom">
+						<ul class="pagination">
+							<li class="pagination_button pagination_prev">
+								<a href="">
+									<svg width="21" height="11" viewBox="0 0 21 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M21 5.76471L1.43478 5.76471M6.21739 1L1 5.76471L6.21739 10" stroke="#34373D"/>
+									</svg>									
+									<span>
+										Назад
+									</span>
+								</a>
+							</li>
+							<li class="pagination_item">
+								<a href="" class="pagination_link">
+									1
+								</a>
+							</li>
+							<li class="pagination_item">
+								<a href="" class="pagination_link active">
+									2
+								</a>
+							</li>
+							<li class="pagination_item">
+								<a href="" class="pagination_link">
+									3
+								</a>
+							</li>
+							<li class="pagination_button pagination_next">
+								<a href="">
+									<span>
+										Дальше
+									</span>
+									<svg width="21" height="11" viewBox="0 0 21 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M0 5.23529L19.5652 5.23529M14.7826 10L20 5.23529L14.7826 1" stroke="#34373D"/>
+									</svg>																
+								</a>
+							</li>
+						</ul>
+						<div class="pages">
+							Страница 1/8
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer">
+			<div class="container">
+				<div class="footer_top">
+					<div class="footer_left">
+						<a href="index.html" class="footer_logo">
+							<img src="./images/logo.svg" alt="">
+						</a>
+						<div class="footer_socials">
+							<a href="+88002225091" class="footer_socials-send">
+								8800 222-50-91
+							</a>
+							<a href="mailto:mail@t-gamers.ru" class="footer_socials-send">
+								mail@t-gamers.ru
+							</a>
+							<div class="footer_socials-images">
+								<a href="">
+									<img src="./images/yt.svg" alt="">
+								</a>
+								<a href="">
+									<img src="./images/vk.svg" alt="">
+								</a>
+								<a href="">
+									<img src="./images/tg.svg" alt="">
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="footer_center">
+						<div class="footer_center-item">
+							<a href="calendar.html">
+								Календарь игр
+							</a>
+						</div>
+						<div class="footer_center-item">
+							<a href="https://gameuniversity.ru/" target="_blank">
+								Обучение
+							</a>
+						</div>
+						<div class="footer_center-item">
+							<a href="https://mastertigr.ru/" target="_blank">
+								Магазин
+							</a>
+						</div>
+						<div class="footer_center-item">
+							<a href="games.html">
+								Игропрактики
+							</a>
+						</div>
+						<div class="footer_center-item">
+							<a href="transf.html">
+								Игры
+							</a>
+						</div>
+						<div class="footer_center-item">
+							<a href="info.html">
+								О нас
+							</a>
+						</div>
+					</div>
+					<div class="footer_right">
+						<div class="footer_right-links">
+							<a href="" class="footer_right-link">
+								Университет игропрактики
+							</a>
+							<a href="" class="footer_right-link">
+								Фестиваль «Большая Игра»
+							</a>
+							<a href="" class="footer_right-link">
+								Интернет-магазин «Мастер Т-игр»
+							</a>
+						</div>
+						<div class="footer_right-button">
+							<a href="">Подписаться на рассылку</a>
+						</div>
+					</div>
+				</div>
+				<div class="footer_bottom">
+					<div class="footer_bottom-left">
+						<div class="footer_bottom-copy">
+							© Мир игропрактики.
+						</div>
+						<div class="footer_bottom-desc">
+							Все права защищены <br>
+							Индивидуальный предприниматель Рыбакова М. В. <br>
+							ИНН 401701383548 ОГРНИП 321402700045581 <br>
+							249273, Калужская область, город Сухиничи, <br>
+							ул.70 лет Великого Октября, д.7, кв.64 <br>
+							8 800 222-50-91
+						</div>
+					</div>
+					<div class="footer_bottom-right">
+						<a href="" class="footer_bottom-link">
+							Политика конфиденциальности
+						</a>
+						<a href="" class="footer_bottom-link">
+							Публичная оферта
+						</a>
+						<a href="" class="footer_bottom-link">
+							Платежи, безопасность, возвраты
+						</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+	<div class="city popup" id="login">
+		<div class="popup_wrapper">
+			<div class="popup_title">
+				здравствуйте
+			</div>
+			<div class="popup_input">
+				<input type="text" placeholder="Логин или email">
+			</div>
+			<div class="popup_input">
+				<input type="text" placeholder="Пароль">
+			</div>
+			<a href="" class="city_forget">
+				Не помню пароль
+			</a>
+			<div class="popup_button">
+				<a href="">
+					Вход
+				</a>
+			</div>
+			<div class="popup_choose">
+				<span>Еще нет профиля?</span>
+				<a href="#register" data-fancybox="">Зарегистрируйтесь</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="city popup" id="register">
+		<div class="popup_wrapper">
+			<div class="popup_title">
+				РЕГИСТРАЦИЯ
+			</div>
+			<div class="popup_input">
+				<input type="text" placeholder="Ник">
+			</div>
+			<div class="popup_input">
+				<input type="tel" placeholder="Телефон">
+			</div>
+			<div class="popup_input">
+				<input type="email" placeholder="Email">
+			</div>
+			<div class="popup_input">
+				<input type="password" placeholder="Пароль">
+			</div>
+			<div class="popup_input">
+				<input type="password" placeholder="Повторите пароль">
+			</div>
+			<div class="city_forget city_forget--register">
+				Нажимая на кнопку, я соглашаюсь на <a href="">обработку персональных данных</a>
+			</div>
+			<div class="popup_button">
+				<a href="#thanks" data-fancybox="">
+					Регистрация
+				</a>
+			</div>
+			<div class="popup_choose">
+				<span>У вас уже есть профиль?</span>
+				<a href="#login" data-fancybox="">Войдите</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="city popup" id="changecity">
+		<div class="popup_wrapper">
+			<div class="popup_title">
+				СМЕНА ГОРОДА
+			</div>
+			<div class="popup_input">
+				<input type="text" placeholder="Начните вводить название города. Минимум 3 символа">
+			</div>
+			<div class="popup_button">
+				<a href="">
+					Сменить город
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="city popup" id="thanks">
+		<div class="popup_wrapper">
+			<div class="popup_title">
+				Спасибо за регистрацию, юлия!
+			</div>
+			<div class="popup_button">
+				<a href="">
+					Войти в личный кабинет
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<script src=" https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="libs/select2/select2.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="libs/mask/jquery.maskedinput.js"></script>
+	<script src="libs/fancybox/js/jquery.fancybox.js"></script>
+	<script src="js/slick.min.js"></script>
+	<script src="js/common.js"></script>
+</body>
+</html>
