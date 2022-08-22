@@ -717,8 +717,8 @@ select:focus-visible, select:focus, span:focus-visible, span:focus {
 .calendar_menu-wrap::-webkit-scrollbar {
   width: 1px;
   height: 1px;
-  background-color: #D7DCE7;
-  border-radius: 8px;
+  background-color: transparent;
+  border-radius: 0px;
 }
 
 .calendar_menu-wrap::-webkit-scrollbar-thumb {
@@ -800,7 +800,7 @@ select:focus-visible, select:focus, span:focus-visible, span:focus {
 .calendar_menu-button {
   width: 100%;
   padding-right: 30px;
-  border-right: 2px solid #D7DCE7;
+  border-right: 1px solid #D7DCE7;
   padding-top: 0;
 }
 
